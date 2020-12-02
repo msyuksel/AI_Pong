@@ -10,9 +10,4 @@ public class Canvas : MonoBehaviour
         GameObject objs = GameObject.FindGameObjectWithTag("Canvas");
         DontDestroyOnLoad(this.gameObject);
     }
-    void Update()
-    {
-        
-    }
-
 }

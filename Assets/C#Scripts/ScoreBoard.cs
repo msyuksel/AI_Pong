@@ -18,13 +18,15 @@ public class ScoreBoard : MonoBehaviour
 
     public void ScoreHit(bool trueFalse)
     {
-        score = score + scorePerHit;
-        if (trueFalse==false)
+        
+        if (trueFalse == false)
         {
+            score = score + scorePerHit;
             scoreText.text = score.ToString();
         }
         else if (trueFalse == true)
         {
+            score = 0;
             scoreText.text = "0";
         }
         Debug.Log("scored " + score + " points");
