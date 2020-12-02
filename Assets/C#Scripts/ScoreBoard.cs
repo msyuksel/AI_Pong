@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour
 {
+    //Attatched to the Text of the UI. Child of Canvas
+    //Need to save scores made through scene reloads, if the scene reload happens because of enemy base collision
     public int scorePerHit = 10;
 
     public int score;
@@ -14,11 +14,6 @@ public class ScoreBoard : MonoBehaviour
     {
         scoreText = GetComponent<Text>();
         scoreText.text = score.ToString();
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void ScoreHit()
