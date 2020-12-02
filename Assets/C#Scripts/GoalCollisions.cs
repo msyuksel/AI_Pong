@@ -19,11 +19,11 @@ public class GoalCollisions : MonoBehaviour
         if (!isPlayerGoal)
         {
             RegisterCollision(collision);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
 
     }
@@ -34,23 +34,6 @@ public class GoalCollisions : MonoBehaviour
         {
             scoreBoard.ScoreHit();
             Debug.Log("Point Scored!");
-        }
-    }
-
-    public void KeepPoints()
-    {
-        if (!isPlayerGoal)
-        {
-
-            SceneManager.LoadScene(0);
-        }
-    }
-
-    public void ErasePoints()
-    {
-        if (isPlayerGoal)
-        {
-            SceneManager.LoadScene(0);
         }
     }
     
