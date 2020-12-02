@@ -12,21 +12,31 @@ public class UnifiedControls : MonoBehaviour
     {
         if (isBumper1)
         {
-            float yOffset = InputAndMovementSpeed("Vertical");
-
-            float clampedYPos = MovementAndRange(yOffset);
-
-            transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+            Bumper1();
         }
         else
         {
-            float yOffset = InputAndMovementSpeed("Vertical2");
-
-            float clampedYPos = MovementAndRange(yOffset);
-
-            transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+            Bumper2();
         }
-        
+
+    }
+
+    private void Bumper1()
+    {
+        float yOffset = InputAndMovementSpeed("Vertical");
+
+        float clampedYPos = MovementAndRange(yOffset);
+
+        transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+    }
+
+    private void Bumper2()
+    {
+        float yOffset = InputAndMovementSpeed("Vertical2");
+
+        float clampedYPos = MovementAndRange(yOffset);
+
+        transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
     }
 
     private float InputAndMovementSpeed(string VOrV2)
