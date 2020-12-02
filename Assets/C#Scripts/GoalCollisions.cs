@@ -18,23 +18,27 @@ public class GoalCollisions : MonoBehaviour
     {
         if (!isPlayerGoal)
         {
-            RegisterCollision(collision);
+            //RegisterCollision(collision);
+            scoreBoard.ScoreHit(false);
             SceneManager.LoadScene(1);
         }
         else
         {
+            scoreBoard.ScoreHit(true);
             SceneManager.LoadScene(1);
         }
 
     }
 
+    /*
     private void RegisterCollision(Collision collision)
     {
         if (collision.transform.name == "Ball")
         {
-            scoreBoard.ScoreHit();
+            scoreBoard.ScoreHit(trueFalse);
             Debug.Log("Point Scored!");
         }
     }
+    */
     
 }
