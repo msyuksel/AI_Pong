@@ -21,6 +21,7 @@ public class GoalCollisions : MonoBehaviour
         if (!isPlayerGoal)
         {
             RegisterCollision(collision);
+            SceneManager.LoadScene(0);
         }
         else
         {
