@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 133411917}
   - component: {fileID: 133411916}
   - component: {fileID: 133411919}
+  - component: {fileID: 133411920}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -235,6 +236,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2321683819b4b64188d871eedc09f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &133411920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133411914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d04478d3d6824e89fd8ea6026582e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePerHit: 10
+  score: 0
+  scoreText: {fileID: 1005915915}
+  highScore: {fileID: 1803428438}
+  aIScore: {fileID: 406652616}
 --- !u!1 &405752522
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +891,6 @@ GameObject:
   - component: {fileID: 1005915914}
   - component: {fileID: 1005915916}
   - component: {fileID: 1005915915}
-  - component: {fileID: 1005915917}
   m_Layer: 5
   m_Name: ScoreUI
   m_TagString: Text
@@ -943,23 +960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005915913}
   m_CullTransparentMesh: 0
---- !u!114 &1005915917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005915913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3d04478d3d6824e89fd8ea6026582e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scorePerHit: 1
-  score: 0
-  scoreText: {fileID: 1005915915}
-  highScore: {fileID: 1803428438}
-  aIScore: {fileID: 406652616}
 --- !u!1 &1013548775
 GameObject:
   m_ObjectHideFlags: 0
