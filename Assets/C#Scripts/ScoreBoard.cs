@@ -8,28 +8,41 @@ public class ScoreBoard : MonoBehaviour
     public int scorePerHit = 10;
 
     public int score;
+    
     public Text scoreText;
+    public Text highScore;
 
     private void Start()
     {
-        scoreText = GetComponent<Text>();
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         scoreText.text = score.ToString();
     }
 
     public void ScoreHit(bool trueFalse)
     {
         
-        if (trueFalse == false)
+        if (trueFalse == true)
         {
+            CountHighScore();
             score = score + scorePerHit;
             scoreText.text = score.ToString();
         }
-        else if (trueFalse == true)
+        else if (trueFalse == false)
         {
             score = 0;
             scoreText.text = "0";
         }
+
         Debug.Log("scored " + score + " points");
+    }
+
+    public void CountHighScore()
+    {
+        if(score > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", score);
+            highScore.text = score.ToString();
+        }
     }
 
 }

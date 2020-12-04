@@ -877,6 +877,7 @@ MonoBehaviour:
   scorePerHit: 10
   score: 0
   scoreText: {fileID: 1005915915}
+  highScore: {fileID: 1803428438}
 --- !u!1 &1013548775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803428436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f100fc7391b8cbe44931b75a9fdf94f8, type: 3}
   m_Name: 

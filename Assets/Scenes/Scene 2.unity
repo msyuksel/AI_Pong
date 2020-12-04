@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c730cc17911da47a3293e514675993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 12
 --- !u!1 &693112806
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBumper1: 0
-  speed: 5
+  speed: 10
   yRange: 4
 --- !u!1 &1117214634
 GameObject:
@@ -1260,5 +1260,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBumper1: 1
-  speed: 5
+  speed: 10
   yRange: 4

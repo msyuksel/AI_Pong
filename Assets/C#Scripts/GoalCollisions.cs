@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GoalCollisions : MonoBehaviour
 {
     //This is the Ball script
-    //Need to give ScoreBoard the power to control scene reloads on collision
+    //Need to give ScoreBoard the power to control scene reloads on collision?
     public bool isPlayerGoal;
 
     ScoreBoard scoreBoard;
@@ -18,12 +18,12 @@ public class GoalCollisions : MonoBehaviour
     {
         if (!isPlayerGoal)
         {
-            scoreBoard.ScoreHit(false);
+            scoreBoard.ScoreHit(true);
             SceneManager.LoadScene(1);
         }
-        else
+        else 
         {
-            scoreBoard.ScoreHit(true);
+            scoreBoard.ScoreHit(false);
             SceneManager.LoadScene(1);
         }
 
