@@ -23,8 +23,8 @@ public class ScoreBoard : MonoBehaviour
         
         if (trueFalse == true)
         {
-            CountHighScore();
             score = score + scorePerHit;
+            CountHighScore();
             scoreText.text = score.ToString();
         }
         else if (trueFalse == false)
