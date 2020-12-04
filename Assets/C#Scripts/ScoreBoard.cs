@@ -8,14 +8,17 @@ public class ScoreBoard : MonoBehaviour
     public int scorePerHit = 10;
 
     public int score;
-    
+    int scoreAI;
+
     public Text scoreText;
     public Text highScore;
+    public Text aIScore;
 
     private void Start()
     {
         highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         scoreText.text = score.ToString();
+        aIScore.text = scoreAI.ToString();
     }
 
     public void ScoreHit(bool trueFalse)
@@ -29,6 +32,7 @@ public class ScoreBoard : MonoBehaviour
         }
         else if (trueFalse == false)
         {
+            CountAIScore();
             score = 0;
             scoreText.text = "0";
         }
@@ -45,4 +49,9 @@ public class ScoreBoard : MonoBehaviour
         }
     }
 
+    public void CountAIScore()
+    {
+        scoreAI++;
+        aIScore.text = scoreAI.ToString();
+    }
 }
