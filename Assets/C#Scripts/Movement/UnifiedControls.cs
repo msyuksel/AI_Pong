@@ -8,6 +8,8 @@ public class UnifiedControls : MonoBehaviour
 
     [SerializeField] private float xRange = 4f;
 
+    public Joystick joystick;
+
     void Update()
     {
         if (isBumper1)
@@ -39,11 +41,20 @@ public class UnifiedControls : MonoBehaviour
         transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
     }
 
-    private float InputAndMovementSpeed(string VOrV2)
+    private float InputAndMovementSpeed(string whichInput)
     {
-        float xThrow = Input.GetAxis(VOrV2);
-        float xOffset = xThrow * speed * Time.deltaTime;
-        return xOffset;
+        if (!isBumper1)
+        {
+            float xThrow = Input.GetAxis(whichInput);
+            float xOffset = xThrow * speed * Time.deltaTime;
+            return xOffset;
+        }
+        else
+        {
+            float xThrow = joystick.Horizontal;
+            float xOffset = xThrow * speed * Time.deltaTime;
+            return xOffset;
+        }
     }
 
     private float MovementAndRange(float xOffset)
