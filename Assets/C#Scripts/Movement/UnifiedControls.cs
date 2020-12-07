@@ -6,7 +6,7 @@ public class UnifiedControls : MonoBehaviour
 
     public float speed = 5f;
 
-    [SerializeField] private float yRange = 4f;
+    [SerializeField] private float xRange = 4f;
 
     void Update()
     {
@@ -23,33 +23,33 @@ public class UnifiedControls : MonoBehaviour
 
     private void Bumper1()
     {
-        float yOffset = InputAndMovementSpeed("Vertical");
+        float xOffset = InputAndMovementSpeed("Horizontal");
 
-        float clampedYPos = MovementAndRange(yOffset);
+        float clampedXPos = MovementAndRange(xOffset);
 
-        transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+        transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
     }
 
     private void Bumper2()
     {
-        float yOffset = InputAndMovementSpeed("Vertical2");
+        float xOffset = InputAndMovementSpeed("Horizontal2");
 
-        float clampedYPos = MovementAndRange(yOffset);
+        float clampedXPos = MovementAndRange(xOffset);
 
-        transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+        transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
     }
 
     private float InputAndMovementSpeed(string VOrV2)
     {
-        float yThrow = Input.GetAxis(VOrV2);
-        float yOffset = yThrow * speed * Time.deltaTime;
-        return yOffset;
+        float xThrow = Input.GetAxis(VOrV2);
+        float xOffset = xThrow * speed * Time.deltaTime;
+        return xOffset;
     }
 
-    private float MovementAndRange(float yOffset)
+    private float MovementAndRange(float xOffset)
     {
-        float rawYPos = transform.localPosition.y + yOffset;
-        float clampedYPos = Mathf.Clamp(rawYPos, -yRange, yRange);
-        return clampedYPos;
+        float rawXPos = transform.localPosition.x + xOffset;
+        float clampedxPos = Mathf.Clamp(rawXPos, -xRange, xRange);
+        return clampedxPos;
     }
 }
